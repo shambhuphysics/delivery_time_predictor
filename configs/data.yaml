@@ -12,3 +12,11 @@ download:
   timeout_connect: 5
   timeout_read: 30
   enable_versioning: true
+  
+validation:
+  missing_value_threshold: 0.5
+  allow_duplicates: false
+  allow_negative_values: true
+  allow_infinite_values: false
+  min_rows: 1
+  min_columns: 1
