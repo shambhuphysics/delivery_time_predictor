@@ -13,6 +13,9 @@ data:
 validate:
 	@python3 -m src.data.validation
 
+cleaning:
+	@python3 -m src.data.cleaning
+
 test:
 	@pytest tests/ -v
 

@@ -12,7 +12,7 @@ download:
   timeout_connect: 5
   timeout_read: 30
   enable_versioning: true
-  
+
 validation:
   missing_value_threshold: 0.5
   allow_duplicates: false
@@ -20,3 +20,8 @@ validation:
   allow_infinite_values: false
   min_rows: 1
   min_columns: 1
+
+cleaning:
+  missing_row_threshold: 0.5
+  cap_outliers: true
+  iqr_multiplier: 1.5
