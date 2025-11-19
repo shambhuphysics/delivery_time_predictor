@@ -1,0 +1,14 @@
+data_sources:
+  phonopy:
+    url: "https://github.com/shambhuphysics/Phonopy-scripts/blob/main/data_with_features.csv"
+    filename: "data_with_features.csv"
+    description: "Phonopy features dataset"
+
+paths:
+  raw: "data/raw"
+  processed: "data/processed"
+
+download:
+  timeout_connect: 5
+  timeout_read: 30
+  enable_versioning: true
