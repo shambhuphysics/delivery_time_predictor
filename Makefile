@@ -1,4 +1,4 @@
-.PHONY: help data clean-data split test clean pipeline
+.PHONY: help data clean-data split features test clean pipeline
 
 help:
 	@echo "Commands:"
@@ -6,6 +6,7 @@ help:
 	@echo "  make data        - Download data"
 	@echo "  make clean-data  - Clean data"
 	@echo "  make split       - Split data"
+	@echo "  make features    - Engineer features"
 	@echo "  make test        - Run tests"
 	@echo "  make clean       - Clean cache"
 
@@ -18,7 +19,10 @@ clean-data:
 split:
 	@python3 -m src.data.splitting
 
-pipeline: data clean-data split
+features:
+	@python3 -m src.data.build_features
+
+pipeline: data clean-data split features
 	@echo "✓ Pipeline complete"
 
 test:

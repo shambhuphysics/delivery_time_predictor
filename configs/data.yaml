@@ -1,8 +1,7 @@
 data_sources:
-  phonopy:
+  delivery:
     url: "https://github.com/shambhuphysics/Phonopy-scripts/blob/main/data_with_features.csv"
     filename: "data_with_features.csv"
-    description: "Phonopy features dataset"
 
 paths:
   raw: "data/raw"
@@ -11,15 +10,6 @@ paths:
 download:
   timeout_connect: 5
   timeout_read: 30
-  enable_versioning: true
-
-validation:
-  missing_value_threshold: 0.5
-  allow_duplicates: false
-  allow_negative_values: true
-  allow_infinite_values: false
-  min_rows: 1
-  min_columns: 1
 
 cleaning:
   missing_row_threshold: 0.5
@@ -30,5 +20,24 @@ splitting:
   test_size: 0.15
   val_size: 0.15
   random_seed: 42
-  shuffle: true
-  stratify: false
+
+features:
+  # Column names in your data
+  distance_col: "distance_miles"
+  hour_col: "time_of_day_hours"
+  weekend_col: "is_weekend"
+  target_col: "delivery_time_minutes"
+  
+  # Feature engineering settings
+  create_rush_hour: true
+  create_speed: true
+  create_cyclical_time: true
+  create_interactions: true
+  
+  # Normalization indices (distance, hour, speed, sin, cos)
+  normalize_indices: [0, 1, 2, 6, 7]
+
+validation:
+  missing_value_threshold: 0.5
+  allow_duplicates: false
+  allow_infinite_values: false
