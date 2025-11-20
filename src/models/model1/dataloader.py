@@ -17,7 +17,6 @@ class DataLoaderFactory:
         self.num_workers = self.config['data']['num_workers']
     
     def _load_config(self, config_path: str) -> dict:
-        """Load configuration from YAML."""
         with open(config_path, 'r') as f:
             return yaml.safe_load(f)
     
@@ -51,16 +50,7 @@ class DataLoaderFactory:
 
 
 def get_loaders(batch_size: int = None, config_path: str = "configs/model.yaml") -> tuple:
-    """
-    Convenience function to get DataLoaders.
-    
-    Args:
-        batch_size: Override config batch size (optional)
-        config_path: Path to model config file
-    
-    Returns:
-        Tuple of (train_loader, val_loader, test_loader)
-    """
+    """Convenience function to get DataLoaders."""
     factory = DataLoaderFactory(config_path)
     
     if batch_size is not None:
