@@ -1,0 +1,18 @@
+model:
+  architecture: "mlp"
+  input_dim: 8
+  hidden_dims: [64, 32]
+  output_dim: 1
+  dropout: 0.2
+
+training:
+  batch_size: 64
+  learning_rate: 0.001
+  epochs: 50
+  optimizer: "adam"
+  loss_function: "mse"
+  
+data:
+  features_dir: "data/processed"
+  shuffle_train: true
+  num_workers: 0
