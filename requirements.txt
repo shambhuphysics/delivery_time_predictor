@@ -1,4 +1,18 @@
-requests
+# Core data processing
 pandas
+numpy
+
+# HTTP requests
+requests
+
+# Configuration
 pyyaml
+
+# Data splitting
+scikit-learn
+
+# Testing
 pytest
+
+# ML framework (for future steps)
+torch

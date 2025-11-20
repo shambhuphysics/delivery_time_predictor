@@ -28,7 +28,7 @@ def mock_response():
     mock = Mock()
     mock.content = b"col1,col2\n1,2\n3,4\n"
     mock.status_code = 200
-    return mock
+    return mocks
 
 
 def test_config_loading(mock_config):
